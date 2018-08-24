@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: eureka-client
+  eureka:
+    client:
+      service-url:
+        defaultZone: http://admin:123456@localhost:8761/eureka/
+    instance:
+      status-page-url-path: http://localhost:${server.port}/info
+      health-check-url-path: http://localhost:${server.port}/health
+      prefer-ip-address: true
+      instance-id: config-client
+---
+spring:
+  profiles: test
+
+server:
+  port: 8010
+
+---
+spring:
+  profiles: dev
+
+server:
+  port: 8011
