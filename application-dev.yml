@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 spring:
   profiles:
     active: dev
@@ -25,3 +26,8 @@ spring:
 
 server:
   port: 8009
+=======
+uaser:
+  name: 李佳dev
+  password: 123456dev
+>>>>>>> d87f7840f553c90f8602dd6eedf01befe2bc3184
