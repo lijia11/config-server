@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: wx-eureka
+
+---
+spring:
+  profiles: test
+
+---
+spring:
+  profiles: dev
+
+---
+spring:
+  profiles: prod
+

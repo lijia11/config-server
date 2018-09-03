@@ -1,0 +1,21 @@
+
+spring:
+  profiles:
+    active: dev
+
+
+  
+---
+spring:
+  profiles: test
+  application:
+    name: evisitor-test
+
+
+---
+spring:
+  profiles: dev
+  application:
+    name: evisitor-dev
+
+
