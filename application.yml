@@ -1,23 +1,30 @@
+#eureka配置
+eureka:
+  client:
+    registry-fetch-interval-seconds: 10 #间隔多久去拉取服务注册信息，默认为30秒
+    service-url:
+     defaultZone: http://admin:123456@localhost:8761/eureka/
+  instance:
+    status-page-url-path: http://localhost:${server.port}/info
+    health-check-url-path: http://localhost:${server.port}/health
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+    lease-expiration-duration-in-seconds: 15 #示eureka client发送心跳给server端的频率(默认30秒)
+    lease-renewal-interval-in-seconds: 25 #eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
 
-spring:
-  profiles:
-    active: dev
-
-
-  
----
-spring:
-  profiles: test
-  application:
-    name: config-test
-
-
----
-spring:
-  profiles: dev
-  application:
-    name: config-dev
-
-uaser:
-  name: 李佳dev
-  password: 123456dev
+#配置info的显示信息    
+info: 
+  app.name: ${eureka.instance.instance-id}
+  company.name: www.whreal.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+#配置actuator监控中心  
+management:
+  endpoints:
+    web:
+      base-path: /
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
