@@ -1,7 +1,6 @@
 #eureka配置
 eureka:
   client:
-    registry-fetch-interval-seconds: 10 #间隔多久去拉取服务注册信息，默认为30秒
     service-url:
      defaultZone: http://admin:123456@localhost:8761/eureka/
   instance:
