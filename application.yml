@@ -4,8 +4,8 @@ eureka:
     service-url:
      defaultZone: http://admin:123456@localhost:8761/eureka/
   instance:
-    status-page-url-path: http://localhost:${server.port}/info
-    health-check-url-path: http://localhost:${server.port}/health
+    status-page-url-path: http://localhost:${server.port}/manage/info
+    health-check-url-path: http://localhost:${server.port}/manage/health
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
     lease-expiration-duration-in-seconds: 15 #示eureka client发送心跳给server端的频率(默认30秒)
@@ -21,7 +21,7 @@ info:
 management:
   endpoints:
     web:
-      base-path: /
+      base-path: /manage
       exposure:
         include: "*"
   endpoint:
