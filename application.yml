@@ -1,15 +1,15 @@
 #eureka配置
-eureka:
-  client:
-    service-url:
-     defaultZone: http://admin:123456@localhost:8761/eureka/
-  instance:
-    status-page-url-path: http://localhost:${server.port}/manage/info
-    health-check-url-path: http://localhost:${server.port}/manage/health
-    prefer-ip-address: true
-    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
-    lease-expiration-duration-in-seconds: 15 #示eureka client发送心跳给server端的频率(默认30秒)
-    lease-renewal-interval-in-seconds: 25 #eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
+#eureka:
+#  client:
+#    service-url:
+#     defaultZone: http://admin:123456@localhost:8761/eureka/
+#  instance:
+#    status-page-url-path: http://localhost:${server.port}/manage/info
+#    health-check-url-path: http://localhost:${server.port}/manage/health
+#    prefer-ip-address: true
+#    instance-id: ${spring.application.name}:${spring.application.instance-id:${random.value}}
+#    lease-expiration-duration-in-seconds: 15 #示eureka client发送心跳给server端的频率(默认30秒)
+#    lease-renewal-interval-in-seconds: 25 #eureka server至上一次收到client的心跳之后，等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
 
 #配置info的显示信息    
 info: 
@@ -27,3 +27,4 @@ management:
   endpoint:
     health:
       show-details: always
+
